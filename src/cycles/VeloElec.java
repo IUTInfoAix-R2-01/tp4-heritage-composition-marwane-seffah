@@ -35,11 +35,22 @@ public class VeloElec extends Velo {
 		this.facteurPuissanceMoteur = facteurPuissanceMoteur;
 	}
 	
+	@Override
 	public String toString () {
 		return "VeloElec [facteurPuissanceMoteur=" + facteurPuissanceMoteur + "]";
 	}
 	
-	public double getPuissance (double FrequenceCoupDePedale) {
+	/* https://dev.to/bassaoudev/poo-comprendre-la-surcharge-et-la-redefinition-de-methode-en-java-2a90
+	 * @Override sert à écraser le code d'une fonction 
+	 * définie par la classe mère du même nom 
+	 * pour une classe fille (différent de la surcharge 
+	 * car avec la surcharge on différencie les codes 
+	 * avec le nombre de paramètres)
+	 * */
+	
+	@Override 
+	public double getPuissance (double FrequenceCoupDePedale) { // cette méthode est redéfinie
+		// super.getPuissance(FrequenceCoupDePedale) <=> Velo.getPuissance(FrequenceCoupDePedale) (instance de vélo)
 		return super.getPuissance(FrequenceCoupDePedale) * facteurPuissanceMoteur;
 	}
 	
