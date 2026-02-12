@@ -6,7 +6,7 @@ public class Velo {
 	private static double DEFAUT_BRAQUET = 13.0;
 	private double braquet;
 	private double diamRoue;
-	private Random genAlea = new Random() ;
+	private Random genAlea = new Random();
 	
 	public static double getDEFAUT_BRAQUET () {
 		return DEFAUT_BRAQUET;
